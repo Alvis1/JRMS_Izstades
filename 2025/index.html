@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3. kursa Virtuālās Izstādes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: white;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Author display at the top */
+        .author-display {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            border-bottom: 2px solid black;
+            z-index: 1000;
+            padding: 15px;
+            text-align: center;
+            display: none; /* Hidden by default, shown when gallery is loaded */
+        }
+
+        .author-display.visible {
+            display: block;
+        }
+
+        .author-name {
+            font-size: 1.2em;
+            font-weight: 500;
+            color: black;
+            margin: 0;
+        }
+
+        h1 {
+            color: black;
+            font-size: 2.5em;
+            margin-bottom: 1.5em;
+            font-weight: 300;
+        }
+        
+        .school-title {
+            font-size: 3.2em;
+            font-weight: bold;
+            color: black;
+            margin-bottom: 0.5em;
+        }
+        
+        .assignment-title {
+            font-size: 2.8em;
+            color: black;
+            margin-bottom: 1.5em;
+            font-weight: 400;
+        }
+
+        .gallery-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 100px; /* Space for overlay buttons */
+        }
+
+        .gallery-button {
+            background: white;
+            border: 2px solid black;
+            border-radius: 0;
+            padding: 12px 16px;
+            color: black;
+            text-decoration: none;
+            font-size: 0.9em;
+            font-weight: 400;
+            transition: all 0.2s ease;
+            display: inline-block;
+        }
+
+        .gallery-button:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        /* Navigation bar at the bottom */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            border-top: 2px solid black;
+            z-index: 1000;
+            padding: 10px;
+            display: none; /* Hidden by default, shown when gallery is loaded */
+        }
+
+        .bottom-nav.visible {
+            display: block;
+        }
+
+        .nav-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-button {
+            background: white;
+            border: 2px solid black;
+            border-radius: 0;
+            padding: 6px 10px;
+            color: black;
+            text-decoration: none;
+            font-size: 0.7em;
+            font-weight: 400;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .nav-button:hover {
+            background: #f0f0f0;
+        }
+
+        .nav-button.active {
+            background: #d0d0d0;
+            border-color: black;
+        }
+
+        .nav-button.home {
+            background: #e8f5e8;
+            border-color: black;
+            margin-right: 10px;
+        }
+
+        .nav-button.random {
+            background: #fff8e1;
+            border-color: black;
+            margin-right: 10px;
+        }
+
+        /* Overlay controls for main page */
+        .overlay-controls {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid black;
+            border-radius: 0;
+        }
+
+        .overlay-button {
+            background: white;
+            border: 2px solid black;
+            border-radius: 0;
+            padding: 10px 20px;
+            color: black;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .overlay-button:hover {
+            background: #f0f0f0;
+            transform: scale(1.05);
+        }
+
+        .overlay-button.home {
+            background: #e8f5e8;
+            border-color: black;
+        }
+
+        .overlay-button.random {
+            background: #fff8e1;
+            border-color: black;
+        }
+
+        .overlay-button.about {
+            background: #e3f2fd;
+            border-color: black;
+        }
+
+            @media (max-width: 768px) {
+            .school-title {
+                font-size: 2.2em;
+            }
+            
+            .assignment-title {
+                font-size: 1.8em;
+            }
+            
+            h1 {
+                font-size: 2em;
+                margin-bottom: 1em;
+            }            .gallery-grid {
+                gap: 8px;
+            }
+
+            .gallery-button {
+                padding: 10px 12px;
+                font-size: 0.8em;
+            }
+
+            .overlay-controls {
+                bottom: 10px;
+                gap: 10px;
+                padding: 10px;
+            }
+
+            .overlay-button {
+                padding: 8px 15px;
+                font-size: 0.8em;
+            }
+
+            .author-display {
+                padding: 10px;
+            }
+
+            .author-name {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="mainContainer">
+        <div class="school-title">Jaņa Rozentāla Mākslas Skolas 3. kurss </div>
+        <div class="assignment-title">Uzdevums: virtuālā personālizstāde 2025</div>
+        <div class="gallery-grid" id="galleryGrid">
+            <a href="#" onclick="loadGallery('AgateVojevodska/')" class="gallery-button">Agate Vojevodska</a>
+            <a href="#" onclick="loadGallery('AleksaNaumenko/')" class="gallery-button">Aleksa Naumenko</a>
+            <a href="#" onclick="loadGallery('AleksBergersBrandaus/')" class="gallery-button">Aleks Bergers-Brandaus</a>
+            <a href="#" onclick="loadGallery('AliseVeilande/')" class="gallery-button">Alise Veilande</a>
+            <a href="#" onclick="loadGallery('AnnaAbele/1uzd/')" class="gallery-button">Anna Ābele</a>
+            <a href="#" onclick="loadGallery('AusmaMadaraPodina/')" class="gallery-button">Ausma Madara Podiņa</a>
+            <a href="#" onclick="loadGallery('DarjaAndrejevska/1uzd/')" class="gallery-button">Darja Andrejevska</a>
+            <a href="#" onclick="loadGallery('EleonoraKleina/1 uzd/')" class="gallery-button">Eleonora Kleina</a>
+            <a href="#" onclick="loadGallery('ElizabeteLepesa/')" class="gallery-button">Elizabete Lepeša</a>
+            <a href="#" onclick="loadGallery('ElizaDanielaDzene/1uzd/')" class="gallery-button">Elīza Daniela Dzene</a>
+            <a href="#" onclick="loadGallery('EmilijaOseverova/1uzd/')" class="gallery-button">Emīlija Oševerova</a>
+            <a href="#" onclick="loadGallery('EmmaHertaDommere/3D datorgrafika/1.uzd/')" class="gallery-button">Emma Herta Dommere</a>
+            <a href="#" onclick="loadGallery('EvelinaaRusina/')" class="gallery-button">Evelīna Rusina</a>
+            <a href="#" onclick="loadGallery('GabrielaMarkus/1uzd/')" class="gallery-button">Gabriela Markus</a>
+            <a href="#" onclick="loadGallery('GerdaVilnite/')" class="gallery-button">Gerda Vilnīte</a>
+            <a href="#" onclick="loadGallery('GrietaTerzena/')" class="gallery-button">Grieta Terzena</a>
+            <a href="#" onclick="loadGallery('JasminaBalode/')" class="gallery-button">Jasmīna Balode</a>
+            <a href="#" onclick="loadGallery('JekabsVendelis/Jekabs_Vendelis_3a/')" class="gallery-button">Jēkabs Vendelis</a>
+            <a href="#" onclick="loadGallery('KateBrikmaneBuklovska/')" class="gallery-button">Kate Brikmane-Buklovska</a>
+            <a href="#" onclick="loadGallery('LinaLeicane/1uzd/')" class="gallery-button">Līna Leicāne</a>
+            <a href="#" onclick="loadGallery('LivaDislere/')" class="gallery-button">Līva Dišlere</a>
+            <a href="#" onclick="loadGallery('LivaPaulaRedere/1_uzd/bildes/')" class="gallery-button">Līva Paula Redere</a>
+            <a href="#" onclick="loadGallery('LoteSnike/')" class="gallery-button">Lote Sniķe</a>
+            <a href="#" onclick="loadGallery('MaraLepiksone/1uzd/')" class="gallery-button">Māra Lepiksone</a>
+            <a href="#" onclick="loadGallery('MareHermane/galerija/')" class="gallery-button">Mare Hermane</a>
+            <a href="#" onclick="loadGallery('MarijaGerascenko/kods/')" class="gallery-button">Marija Geraščenko</a>
+            <a href="#" onclick="loadGallery('MegijaGrietaKarklina/')" class="gallery-button">Megija Grieta Kārkliņa</a>
+            <a href="#" onclick="loadGallery('PolinaMihailova/')" class="gallery-button">Poļina Mihailova</a>
+            <a href="#" onclick="loadGallery('RobertsLejasmeijers/')" class="gallery-button">Roberts Lejasmeijers</a>
+            <a href="#" onclick="loadGallery('RutaJirgensone/')" class="gallery-button">Ruta Jirgensone</a>
+            <a href="#" onclick="loadGallery('SamantaEverte/1uzd/')" class="gallery-button">Samanta Everte</a>
+            <a href="#" onclick="loadGallery('SofijaSelmaLeiterte/1uzd/')" class="gallery-button">Sofija Selma Leiterte</a>
+            <a href="#" onclick="loadGallery('SofijaVlasova/')" class="gallery-button">Sofija Vlasova</a>
+            <a href="#" onclick="loadGallery('UljanaMaliesva/')" class="gallery-button">Uļjana Mališeva</a>
+        </div>
+    </div>
+
+    <!-- Author display at the top (shown when gallery is loaded) -->
+    <div class="author-display" id="authorDisplay">
+        <h2 class="author-name" id="authorName"></h2>
+    </div>
+
+    <!-- Embedded gallery container -->
+    <div id="embeddedGallery" style="display: none;">
+        <iframe id="galleryFrame" src="" style="width: 100vw; height: 100vh; border: none;"></iframe>
+    </div>
+
+    <!-- Overlay controls for main page -->
+    <div class="overlay-controls" id="mainOverlay">
+        <a href="#" class="overlay-button home" onclick="showMainGallery()">🏠 Sākums</a>
+        <a href="#" class="overlay-button random" onclick="openRandomGallery()">🎲 Nejaušs</a>
+        <a href="#" class="overlay-button about">ℹ️ Par</a>
+    </div>
+
+    <!-- Bottom navigation bar (shown when gallery is loaded) -->
+    <div class="bottom-nav" id="bottomNav">
+        <div class="nav-buttons">
+            <a href="#" class="nav-button home" onclick="showMainGallery()">🏠 Sākums</a>
+            <a href="#" class="nav-button random" onclick="openRandomGallery()">🎲 Nejaušs</a>
+            <a href="#" onclick="loadGallery('AgateVojevodska/')" class="nav-button">Agate Vojevodska</a>
+            <a href="#" onclick="loadGallery('AleksaNaumenko/')" class="nav-button">Aleksa Naumenko</a>
+            <a href="#" onclick="loadGallery('AleksBergersBrandaus/')" class="nav-button">Aleks Bergers-Brandaus</a>
+            <a href="#" onclick="loadGallery('AliseVeilande/')" class="nav-button">Alise Veilande</a>
+            <a href="#" onclick="loadGallery('AnnaAbele/1uzd/')" class="nav-button">Anna Ābele</a>
+            <a href="#" onclick="loadGallery('AusmaMadaraPodina/')" class="nav-button">Ausma Madara Podiņa</a>
+            <a href="#" onclick="loadGallery('DarjaAndrejevska/1uzd/')" class="nav-button">Darja Andrejevska</a>
+            <a href="#" onclick="loadGallery('EleonoraKleina/1 uzd/')" class="nav-button">Eleonora Kleina</a>
+            <a href="#" onclick="loadGallery('ElizabeteLepesa/')" class="nav-button">Elizabete Lepeša</a>
+            <a href="#" onclick="loadGallery('ElizaDanielaDzene/1uzd/')" class="nav-button">Elīza Daniela Dzene</a>
+            <a href="#" onclick="loadGallery('EmilijaOseverova/1uzd/')" class="nav-button">Emīlija Oševerova</a>
+            <a href="#" onclick="loadGallery('EmmaHertaDommere/3D datorgrafika/1.uzd/')" class="nav-button">Emma Herta Dommere</a>
+            <a href="#" onclick="loadGallery('EvelinaaRusina/')" class="nav-button">Evelīna Rusina</a>
+            <a href="#" onclick="loadGallery('GabrielaMarkus/1uzd/')" class="nav-button">Gabriela Markus</a>
+            <a href="#" onclick="loadGallery('GerdaVilnite/')" class="nav-button">Gerda Vilnīte</a>
+            <a href="#" onclick="loadGallery('GrietaTerzena/')" class="nav-button">Grieta Terzena</a>
+            <a href="#" onclick="loadGallery('JasminaBalode/')" class="nav-button">Jasmīna Balode</a>
+            <a href="#" onclick="loadGallery('JekabsVendelis/Jekabs_Vendelis_3a/')" class="nav-button">Jēkabs Vendelis</a>
+            <a href="#" onclick="loadGallery('KateBrikmaneBuklovska/')" class="nav-button">Kate Brikmane-Buklovska</a>
+            <a href="#" onclick="loadGallery('LinaLeicane/1uzd/')" class="nav-button">Līna Leicāne</a>
+            <a href="#" onclick="loadGallery('LivaDislere/')" class="nav-button">Līva Dišlere</a>
+            <a href="#" onclick="loadGallery('LivaPaulaRedere/1_uzd/bildes/')" class="nav-button">Līva Paula Redere</a>
+            <a href="#" onclick="loadGallery('LoteSnike/')" class="nav-button">Lote Snīķe</a>
+            <a href="#" onclick="loadGallery('MaraLepiksone/1uzd/')" class="nav-button">Māra Lepiksone</a>
+            <a href="#" onclick="loadGallery('MareHermane/galerija/')" class="nav-button">Mare Hermane</a>
+            <a href="#" onclick="loadGallery('MarijaGerascenko/kods/')" class="nav-button">Marija Geraščenko</a>
+            <a href="#" onclick="loadGallery('MegijaGrietaKarklina/')" class="nav-button">Megija Grieta Kārkliņa</a>
+            <a href="#" onclick="loadGallery('PolinaMihailova/')" class="nav-button">Poļina Mihailova</a>
+            <a href="#" onclick="loadGallery('RobertsLejasmeijers/')" class="nav-button">Roberts Lejasmeijers</a>
+            <a href="#" onclick="loadGallery('RutaJirgensone/')" class="nav-button">Ruta Jirgensone</a>
+            <a href="#" onclick="loadGallery('SamantaEverte/1uzd/')" class="nav-button">Samanta Everte</a>
+            <a href="#" onclick="loadGallery('SofijaSelmaLeiterte/1uzd/')" class="nav-button">Sofija Selma Leiterte</a>
+            <a href="#" onclick="loadGallery('SofijaVlasova/')" class="nav-button">Sofija Vlasova</a>
+            <a href="#" onclick="loadGallery('UljanaMaliesva/')" class="nav-button">Uļjana Mališeva</a>
+        </div>
+    </div>
+
+    <script>
+        let currentGallery = '';
+        
+        const galleries = [
+            'AgateVojevodska/',
+            'AleksaNaumenko/',
+            'AleksBergersBrandaus/',
+            'AliseVeilande/',
+            'AnnaAbele/1uzd/',
+            'AusmaMadaraPodina/',
+            'DarjaAndrejevska/1uzd/',
+            'EleonoraKleina/1 uzd/',
+            'ElizabeteLepesa/',
+            'ElizaDanielaDzene/1uzd/',
+            'EmilijaOseverova/1uzd/',
+            'EmmaHertaDommere/3D datorgrafika/1.uzd/',
+            'EvelinaaRusina/',
+            'GabrielaMarkus/1uzd/',
+            'GerdaVilnite/',
+            'GrietaTerzena/',
+            'JasminaBalode/',
+            'JekabsVendelis/Jekabs_Vendelis_3a/',
+            'KateBrikmaneBuklovska/',
+            'LinaLeicane/1uzd/',
+            'LivaDislere/',
+            'LivaPaulaRedere/1_uzd/bildes/',
+            'LoteSnike/',
+            'MaraLepiksone/1uzd/',
+            'MareHermane/galerija/',
+            'MarijaGerascenko/kods/',
+            'MegijaGrietaKarklina/',
+            'PolinaMihailova/',
+            'RobertsLejasmeijers/',
+            'RutaJirgensone/',
+            'SamantaEverte/1uzd/',
+            'SofijaSelmaLeiterte/1uzd/',
+            'SofijaVlasova/',
+            'UljanaMaliesva/'
+        ];
+
+        // Map gallery paths to author names
+        const authorNames = {
+            'AgateVojevodska/': 'Agate Vojevodska',
+            'AleksaNaumenko/': 'Aleksa Naumenko',
+            'AleksBergersBrandaus/': 'Aleks Bergers-Brandaus',
+            'AliseVeilande/': 'Alise Veilande',
+            'AnnaAbele/1uzd/': 'Anna Ābele',
+            'AusmaMadaraPodina/': 'Ausma Madara Podiņa',
+            'DarjaAndrejevska/1uzd/': 'Darja Andrejevska',
+            'EleonoraKleina/1 uzd/': 'Eleonora Kleina',
+            'ElizabeteLepesa/': 'Elizabete Lepeša',
+            'ElizaDanielaDzene/1uzd/': 'Elīza Daniela Dzene',
+            'EmilijaOseverova/1uzd/': 'Emīlija Oševerova',
+            'EmmaHertaDommere/3D datorgrafika/1.uzd/': 'Emma Herta Dommere',
+            'EvelinaaRusina/': 'Evelīna Rusina',
+            'GabrielaMarkus/1uzd/': 'Gabriela Markus',
+            'GerdaVilnite/': 'Gerda Vilnīte',
+            'GrietaTerzena/': 'Grieta Terzena',
+            'JasminaBalode/': 'Jasmīna Balode',
+            'JekabsVendelis/Jekabs_Vendelis_3a/': 'Jēkabs Vendelis',
+            'KateBrikmaneBuklovska/': 'Kate Brikmane-Buklovska',
+            'LinaLeicane/1uzd/': 'Līna Leicāne',
+            'LivaDislere/': 'Līva Dišlere',
+            'LivaPaulaRedere/1_uzd/bildes/': 'Līva Paula Redere',
+            'LoteSnike/': 'Lote Snīķe',
+            'MaraLepiksone/1uzd/': 'Māra Lepiksone',
+            'MareHermane/galerija/': 'Mare Hermane',
+            'MarijaGerascenko/kods/': 'Marija Geraščenko',
+            'MegijaGrietaKarklina/': 'Megija Grieta Kārkliņa',
+            'PolinaMihailova/': 'Poļina Mihailova',
+            'RobertsLejasmeijers/': 'Roberts Lejasmeijers',
+            'RutaJirgensone/': 'Ruta Jirgensone',
+            'SamantaEverte/1uzd/': 'Samanta Everte',
+            'SofijaSelmaLeiterte/1uzd/': 'Sofija Selma Leiterte',
+            'SofijaVlasova/': 'Sofija Vlasova',
+            'UljanaMaliesva/': 'Uļjana Mališeva'
+        };
+
+        function loadGallery(galleryPath) {
+            currentGallery = galleryPath;
+            
+            // Hide main container and overlay
+            document.getElementById('mainContainer').style.display = 'none';
+            document.getElementById('mainOverlay').style.display = 'none';
+            
+            // Show embedded gallery, author display and bottom nav
+            document.getElementById('embeddedGallery').style.display = 'block';
+            document.getElementById('authorDisplay').classList.add('visible');
+            document.getElementById('bottomNav').classList.add('visible');
+            
+            // Update author name
+            const authorName = authorNames[galleryPath] || 'Unknown Author';
+            document.getElementById('authorName').textContent = authorName;
+            
+            // Load the gallery in iframe
+            const iframe = document.getElementById('galleryFrame');
+            iframe.src = galleryPath + 'index.html';
+            
+            // Update active button in bottom nav
+            updateActiveButton(galleryPath);
+        }
+
+        function showMainGallery() {
+            currentGallery = '';
+            
+            // Show main container and overlay
+            document.getElementById('mainContainer').style.display = 'block';
+            document.getElementById('mainOverlay').style.display = 'flex';
+            
+            // Hide embedded gallery, author display and bottom nav
+            document.getElementById('embeddedGallery').style.display = 'none';
+            document.getElementById('authorDisplay').classList.remove('visible');
+            document.getElementById('bottomNav').classList.remove('visible');
+            
+            // Clear iframe and author name
+            document.getElementById('galleryFrame').src = '';
+            document.getElementById('authorName').textContent = '';
+            
+            // Clear active buttons
+            document.querySelectorAll('.nav-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+        }
+
+        function updateActiveButton(galleryPath) {
+            // Remove active class from all buttons
+            document.querySelectorAll('.nav-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Add active class to current gallery button
+            const activeButton = document.querySelector(`[onclick="loadGallery('${galleryPath}')"]`);
+            if (activeButton && activeButton.classList.contains('nav-button')) {
+                activeButton.classList.add('active');
+            }
+        }
+
+        function openRandomGallery() {
+            const randomIndex = Math.floor(Math.random() * galleries.length);
+            loadGallery(galleries[randomIndex]);
+        }
+
+        // Add keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'r' || e.key === 'R') {
+                openRandomGallery();
+            }
+            if (e.key === 'h' || e.key === 'H') {
+                showMainGallery();
+            }
+            
+            // Arrow key navigation between galleries
+            if (currentGallery && (e.key === 'ArrowLeft' || e.key === 'ArrowRight')) {
+                const currentIndex = galleries.indexOf(currentGallery);
+                let newIndex;
+                
+                if (e.key === 'ArrowLeft') {
+                    newIndex = currentIndex > 0 ? currentIndex - 1 : galleries.length - 1;
+                } else {
+                    newIndex = currentIndex < galleries.length - 1 ? currentIndex + 1 : 0;
+                }
+                
+                loadGallery(galleries[newIndex]);
+            }
+        });
+
+        // Prevent default link behavior for # links
+        document.addEventListener('click', function(e) {
+            if (e.target.getAttribute('href') === '#') {
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

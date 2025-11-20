@@ -1,0 +1,56 @@
+ <html>
+  <head>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+
+    <!--gribu majas, seit ir darbini, kas pie sienam -->
+    
+    <a-plane id="arka" src="arka.JPG" material="shader: flat" position="-3.10858 5.10017 -14.17747" scale="10 6 1"></a-plane>
+    <a-plane id="emils" src="emils.JPG" position="3.82052 5.14573 -14.20522" scale="2.68 4.06 1"></a-plane>
+    <a-plane id="histerija" src="histerija.JPG" material="shader: flat" position="-14.82709 4.23361 -7.22132" scale="10 6 1" rotation="0 90 0"></a-plane>
+    <a-plane id="mati" src="mati.JPG" material="shader: flat" position="14.9485 4.35641 0.21558" scale="10 6 1" rotation="0 -90 0"></a-plane>
+    <a-plane id="tupiens" src="pietupiens.JPG" material="shader: flat" position="-14.96 4.23361 7.24355" scale="10 6 1" rotation="0 90 0"></a-plane>
+    
+    <!--sitie ir paklaji -->
+  
+      <a-plane src="paklajs.jpg" position="-3.97095 0.06459 -5.458" rotation="-90 6.68 0" width="4" height="4" color="" material="color: #FFF" scale="1.6 3.27 1"></a-plane>
+      <a-plane src="paklajs2.jpg" position="1.79563 0.01478 0.26637" rotation="-90 -12.64 0" width="4" height="4" color="" material="color: #FFF" scale="1.23 2.62 1"></a-plane>
+      
+    <!--sita ir apkarne -->
+     <a-box position="-0.00734 4.97728 0.07118" color="#4CC3D9" scale="30 10 30" material="side: back; color: #e7ecda"></a-box>
+     <!--labais cilindrs-->
+     <a-cylinder position="9.50281 3.91701 0.01978" radius="0.5" height="1.5" color="#FFC65D" scale="2 5.12 2" material="color: #f6ffe8"></a-cylinder>
+    <!--kreisais cilindrs-->
+     <a-cylinder position="-9.85397 3.91701 0.01978" radius="0.5" height="1.5" color="#FFC65D" scale="2 5.12 2" material="color: #eef5e0"></a-cylinder>
+      <a-sky src="vide.jpg" material="shader: standard; blending: none; color:" position="-1.47766 2.13634 -3.92069"></a-sky>
+    <!--burbuli-->
+      <a-sphere position="-3.07126 4.17089 13.29491" radius="1.25" color="#EF2D5E" material="color: #f0ffeb; emissive: #989898; metalness: 1; metalnessTextureRepeat: 0 0; roughness: 0.32"></a-sphere>
+      <a-sphere position="0.01703 4.17089 13.29491" radius="1.25" color="#EF2D5E" material="color: #f0ffeb; emissive: #989898; metalness: 1; metalnessTextureRepeat: 0 0; roughness: 0.32"></a-sphere>
+      <a-sphere position="3.12831 4.17089 13.29491" radius="1.25" color="#EF2D5E" material="color: #f0ffeb; emissive: #989898; metalness: 1; metalnessTextureRepeat: 0 0; roughness: 0.32"></a-sphere>
+      <a-sphere position="-6.15671 4.17089 13.29491" radius="1.25" color="#EF2D5E" material="color: #f0ffeb; emissive: #989898; metalness: 1; metalnessTextureRepeat: 0 0; roughness: 0.32"></a-sphere>
+      <a-sphere position="6.2584 4.17089 13.29491" radius="1.25" color="#EF2D5E" material="color: #f0ffeb; emissive: #989898; metalness: 1; metalnessTextureRepeat: 0 0; roughness: 0.32"></a-sphere>
+      
+      <!--gaisma-->
+
+<a-entity id="liela gaisma" light="color: #CCC; intensity: 0.36; type: ambient"></a-entity>
+<a-entity id="virs arkas" light="color: #fcb78d; decay: 2; distance: 50; intensity: 80; type: point" position="-0.46128 7.35531 -11.63048"></a-entity>
+<a-entity id="apaseja arka" light="color: #dfad95; decay: 2; distance: 50; intensity: 80; type: point" position="-6.59128 2.11854 -11.97371"></a-entity>
+<a-entity id="virs emila" light="color: #9aeeff; decay: 2; distance: 50; intensity: 30; type: point" position="4.7468 8.09721 -10.85147"></a-entity>
+<a-entity id="virs pietupiens" light="color: #abfbff; decay: 2; distance: 50; intensity: 50; type: point" position="-11.96895 6.84731 7.16289"></a-entity>
+<a-entity id="virs histerijas" light="color: #b1fffc; decay: 2; distance: 50; intensity: 50; type: point" position="-11.92268 7.35531 -7.63784"></a-entity>
+<a-entity id="mati kreisa" light="color: #fcb485; decay: 2; distance: 50; intensity: 80; type: point" position="9.41663 7.14632 -4.36225"></a-entity>
+<a-entity id="mati laba" light="color: #f15f9b; decay: 2; distance: 50; intensity: 80; type: point" position="10.01806 5.97679 4.59873"></a-entity>
+       <!--burbulu gaisma-->
+<a-entity id="1" light="color: #47dadf; decay: 2; distance: 50; intensity: 30; type: point" position="5.16922 0.8921 13.00731"></a-entity>
+<a-entity id="1-2" light="color: #47dadf; decay: 2; distance: 50; intensity: 30; type: point" position="5.16922 7.47882 13.00731"></a-entity>
+<a-entity id="2" light="color: #cfdfdd; decay: 2; distance: 50; intensity: 30; type: point" position="2.18302 0.20735 13.00731"></a-entity>
+<a-entity id="2-2" light="color: #cfdfdd; decay: 2; distance: 50; intensity: 30; type: point" position="2.18302 7.47689 13.00731"></a-entity>
+<a-entity id="3" light="color: #df8a5a; decay: 2; distance: 50; intensity: 80; type: point" position="-0.72616 0.20735 13.00731"></a-entity>
+<a-entity id="3-2" light="color: #df8a5a; decay: 2; distance: 50; intensity: 80; type: point" position="-0.72616 7.3372 13.00731"></a-entity>
+<a-entity id="4" light="color: #df7ad8; decay: 2; distance: 50; intensity: 30; type: point" position="-3.73443 0.66382 13.00731"></a-entity>
+<a-entity id="4-2" light="color: #df7ad8; decay: 2; distance: 50; intensity: 30; type: point" position="-3.73443 7.00427 13.00731"></a-entity>
+
+  </body>
+</html>

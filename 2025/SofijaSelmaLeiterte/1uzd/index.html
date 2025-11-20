@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+  </head>
+
+  <body>
+
+    <a-scene>
+
+    <!--Izstade Objekti-->
+      <a-plane id="darbs_01" material="shader: flat" src="Atteli/VKandinsky_01.webp" height="0.3" width="0.4" scale="10 10 10" position="-0.82539 2.00867 -4.52478" rotation="0 33.515739183972634 0"></a-plane>
+      <a-plane id="darbs_02" material="shader: flat" src="Atteli/Claude-Monet-San-Giorgio-Maggiore-at-Dusk.webp" height="0.3" width="0.4" scale="10 10 10" position="-0.82539 2.00867 7.38006" rotation="0 132.52513801375943 0"></a-plane>
+      
+    <!--Izstades Vide-->
+      <a-box src="Atteli/Marble.webp" position="0 -1 -4" rotation=" 0 0" scale="5 0.3 5"></a-box>
+      <a-sky src="Atteli/unnamed-4.png" ></a-sky>
+    <a-box src="Atteli/Marble.webp" position="0 -1 7.50459" scale="5 0.3 5"></a-box>
+    <a-plane id="palma" src="Atteli/palmtree02.png" transparent="true" material="side: double" position="-1.33035 0.97304 -4.85394" scale="3.94914 3.94914 3.94914" rotation="0 32.85970250854784 0"></a-plane>
+
+    <a-plane id="palma2" src="Atteli/palmtree02.png" transparent="true" position="3.61014 2.94109 5.60098" scale="13.80296 18.08547 13.80296" rotation="0 150.67185730114284 0"></a-plane>
+
+
+
+
+    <!--gaismas-->
+    <a-entity id="spotgaisma" light="type: spot; angle: 45"></a-entity>
+<a-entity id="spotgaisma-2" light="angle: 42.57; color: #e2d1c0; intensity: 10; penumbra: 1; type: spot" position="1.70628 1.64128 1.23634" rotation="-13.619206790259668 160.0437279560977 -138.0289705937861"></a-entity>
+<a-entity id="spotgaisma" light="angle: 42.57; color: #e2d1c0; intensity: 10; penumbra: 1; type: spot" position="1.70628 1.64128 -0.86115" rotation="-26.09249799025769 25.66850922186088 -133.00012002592285"></a-entity>
+<a-entity id="ambient" light="angle: 42.57; color: #aae7f9; intensity: 0.5; penumbra: 1; type: ambient" position="1.70628 1.64128 -0.86115" rotation="-25.35510130792432 34.82838549261735 13.245638307834371"></a-entity>
+
+    </a-scene>
+
+
+
+  </body>
+</html>

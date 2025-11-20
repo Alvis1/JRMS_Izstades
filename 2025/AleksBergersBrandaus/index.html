@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>3D Галерея</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- Камера + управление -->
+      <a-entity position="0 1.6 10">
+        <a-camera wasd-controls-enabled="true" look-controls="true"></a-camera>
+      </a-entity>
+
+      <!-- Пол -->
+      <a-plane position="0 0 0" rotation="-90 0 0" width="50" height="50" color="#ccc"></a-plane>
+
+      <!-- Стены и потолок (большая комната) -->
+      <a-box position="0 5 -25" depth="0.5" height="10" width="50" color="#444"></a-box> <!-- Задняя стена -->
+      <a-box position="0 5 25" depth="0.5" height="10" width="50" color="#444"></a-box> <!-- Передняя стена -->
+      <a-box position="-25 5 0" depth="50" height="10" width="0.5" color="#555"></a-box> <!-- Левая стена -->
+      <a-box position="25 5 0" depth="50" height="10" width="0.5" color="#555"></a-box> <!-- Правая стена -->
+      <a-box position="0 10 0" depth="50" height="0.5" width="50" color="#666"></a-box> <!-- Потолок -->
+
+      <!-- Картинки с адекватным расстоянием -->
+      <a-image src="att/webp/2.webp" position="-10 3 -10" width="8.5" height="5.5"></a-image>
+      <a-image src="att/webp/3.webp" position="0 3 -10" width="2.7" height="5.5"></a-image>
+      <a-image src="att/webp/4.webp" position="10 3 -10" width="9.6" height="5.5"></a-image>
+
+      <!-- Новый ряд картин на противоположной стороне -->
+      <a-image src="att/webp/1.webp" position="-10 3 10" rotation="0 180 0" width="8.2" height="5.5"></a-image>
+      <a-image src="att/webp/5.webp" position="0 3 10" rotation="0 180 0" width="7.3" height="5.5"></a-image>
+      <a-image src="att/webp/6.webp" position="10 3 10" rotation="0 180 0" width="7.28" height="5.5"></a-image>
+
+      <!-- light -->
+      <a-light type="ambient" color="#ffffff" intensity="0.5"></a-light>
+      <a-light type="directional" position="0 15 10" intensity="0.6"></a-light>
+    </a-scene>
+  </body>
+</html>
+

@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+        <!--السراهصازد-->
+        <a-assets>
+            <img id="riba" src="riba.jpg">
+            <img id="ground" src="ground.jpg">
+            <img id="stena" src="stena.jpg">
+            <img id="bubbles" src="bubbles.png">
+            <img id="plakat" src="plakat.jpg">
+            <img id="plakat2" src="plakat2.jpg">
+            <img id="plakat3" src="plakat3.jpg">
+            <img id="gun" src="gun.png">
+            <img id="fish" src="fish.png">
+            <img id="musor" src="musor.png">
+        </a-assets>
+        <!--dekoracii i raboti-->
+        <a-plane position="-2.86476 0.81124 -0.52084" rotation="0.24923664088190808 89.67935409387644 -0.19595156593474153" width="2" height="1" material="src: #riba" scale="0.919 1 1"></a-plane>
+      <a-plane position="0.4759 0 -0.63179" rotation="-90 0 0" width="4" height="4" scale="4.24281 2.35246 4.24281" material="src: #ground"></a-plane>
+      <a-plane position="-1.88905 1.45069 -1.81337" rotation="4.585954192227109 52.5012686834276 34.37460291887374" width="1" height="1" material="src: #bubbles" transparent="true" scale="2 2 2"></a-plane>
+      <a-plane position="4.10198 0.76231 0" rotation="0 -104.92346919112714 0" width="1" height="1.5" material="src: #plakat"></a-plane>
+      <a-plane position="4.48268 1.03125 -0.76289" rotation="0 -61.30419224781756 0" width="1" height="2" material="src: #gun" transparent="true"></a-plane>
+      <a-plane position="-3.58262 0.30931 0.50978" rotation="0.7998490820026294 120.92560745133589 -2.502106691336305" width="1" height="1" material="src: #fish" transparent="true"></a-plane>
+      <a-plane position="5.27323 0.8825 1.73791" rotation="0 -108.9863129163998 0" width="2" height="2" transparent="true" material="src: #musor" scale="1.36052 1 1"></a-plane>
+      <a-plane position="-0.93808 0.93653 -4.34745" rotation="-2.936408700045469 32.07589624480888 -0.9459533197609892" width="2" height="2" transparent="true" material="src: #musor" scale="1.36052 1 1"></a-plane>
+      <a-plane position="-4.95777 0.8825 1.73791" rotation="0 123.10857665078433 0" width="2" height="2" transparent="true" material="src: #musor" scale="1.36052 1 1"></a-plane>
+      <!--svet-->
+      <a-entity light="angle: 44.6; color: #fff2ca; decay: 1.04; distance: 1.87; intensity: 0.81; type: ambient" position="-1.04954 4.93046 -0.55946"></a-entity>
+      <a-entity light="angle: 44.6; color: #fff2ca; decay: 1.04; distance: 1.87; intensity: 4.89; type: point" position="2.84256 1.16419 -0.29367"></a-entity>
+      <a-entity light="angle: 44.6; color: #fff2ca; decay: 1.04; distance: 1.87; intensity: 4.89; type: point" position="-1.87838 1.16419 -0.29367"></a-entity>
+      
+      <!--nebo-->
+      <a-sky material="repeat: 10 10; color: #525687; src: #stena" color="gray"></a-sky>
+      
+    </a-scene>
+
+  </body>
+</html>

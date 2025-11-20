@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>3D datorgrafika</title>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+     
+      <a-sky src="byee.jpg" material="repeat: 10 10"></a-sky>
+
+     
+<a-plane 
+  position="0 0 0" 
+  rotation="-90 0 0" 
+  width="16" 
+  height="16" 
+  material="repeat: 10 10"
+  src="concrete.png">
+</a-plane>
+
+
+
+      <!-- gaisma-->
+      <a-entity light="type: ambient; intensity: 1.6"></a-entity>
+      <a-entity light="type: directional; intensity: 0.6" position="1 1 0"></a-entity>
+
+
+<a-plane src="ES.jpg" position="7 2 0" rotation="0 -90 0" width="2" height="3"></a-plane>
+<a-plane src="SUNS.jpg" position="4.9 2 -4.9" rotation="0 -45 0" width="3" height="3"></a-plane>
+<a-plane src="KAZA.jpg" position="0 2 -7" rotation="0 0 0" width="3" height="3"></a-plane>
+<a-plane src="KOMPENE.jpg" position="-4.9 2 -4.9" rotation="0 45 0" width="3" height="2"></a-plane>
+<a-plane src="MAJA.jpg" position="-7 2 0" rotation="0 90 0" width="2" height="3"></a-plane>
+<a-plane src="CILVEKS.jpg" position="-4.9 2 4.9" rotation="0 135 0" width="2" height="3"></a-plane>
+<a-plane src="BABA.jpg" position="0 2 7" rotation="0 180 0" width="2" height="3"></a-plane>
+
+      <a-entity id="rig" movement-controls position="0 1.6 5">
+        <a-entity 
+          camera 
+          look-controls 
+          wasd-controls 
+          position="0 0 0">
+        </a-entity>
+      </a-entity>
+
+    </a-scene>
+  </body>
+</html>

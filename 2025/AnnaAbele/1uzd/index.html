@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+
+    <!--------> 
+    <!--Darbi-->   
+    <!-------->    
+<a-plane id="kandinsky" src="../red.webp" position="-0.98451 1.28122 -5.70522" height="0.3" width="0.4" rotation="0 29.999999999999996 0" scale="5 5 5"></a-plane>
+<a-plane id="kandinsky-3" src="../linija.webp" position="13.91618 -2.60139 26.51683" height="0.3" width="0.4" rotation="0 -159.61687439872526 0" scale="20 20 20"></a-plane>
+<a-plane id="kandinsky-2" src="../glezna.webp" position="2.21292 1.28122 -9.23409" height="0.3" width="0.4" rotation="0 -19.388891787227056 0" scale="20 20 20"></a-plane>
+    <!--Vide-->   
+    <!-------->   
+
+ <a-plane src="att/stripa.webp" position="0 0 -4" rotation="-90 0 0" width="4" height="4"></a-plane>
+      <a-plane src="att/check.webp" position="2.51001 -2.66451 -10.46801" rotation="-78.49349905953738 -25.2078511545757 0" width="4" height="4" id="darbuplakne-2" scale="2.43024 2.43024 2.43024"></a-plane>
+      <a-plane src="att/linija.webp" transparent="true" scale="7.52394 4.14407 2.07564" rotation="0 42.772445322106215 0" position="-8.40447 0 -9.08476"></a-plane>
+      <a-plane src="../check.webp" transparent="true" scale="17.93862 9.88032 4.94875" rotation="0 142.41553547330767 0" position="-8.40447 0 14.80252"></a-plane>
+      <a-plane src="../check.webp" transparent="true" scale="17.93862 9.88032 4.94875" rotation="34.643320124790094 -126.08108169192305 0" position="19.29375 -4.30361 20.25309"></a-plane>
+      <a-plane src="../zils.avif" position="13.32549 -7.40581 26.24195" rotation="-80.49655951131474 -158.26526696001164 179.9998479605043" width="4" height="4" id="darbuplakne-3" scale="3.36562 3.36562 3.36562"></a-plane>
+      
+    <!---------> 
+    <!--aplis-->   
+    <!---------> 
+    <a-entity rotation="20 0 0" animation="property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 40000">
+        <a-entity rotation="0 0 0">
+            <a-plane src="../stripa.webp" transparent="true" material="side: double" position="0 2 -4" animation="property: rotation; to: 0 360 360; loop: true; easing: linear; dur: 40000"></a-plane>
+        </a-entity>
+        <a-entity rotation="0 45 0">
+            <a-plane src="../check.webp" transparent="true" material="side: double" position="0 2 -4" animation="property: rotation; to: 360 360 0; loop: true; easing: linear; dur: 30000"></a-plane>
+        </a-entity>
+            <a-entity rotation="0 90 0">
+            <a-plane src="../linija.webp" transparent="true" material="side: double" position="0 2 -4" animation="property: rotation; to: 360 0 360; loop: true; easing: linear; dur: 50000"></a-plane>
+        </a-entity>
+            <a-entity rotation="0 135 0">
+            <a-plane src="../red.webp" transparent="true" material="side: double" position="0 2 -4" animation="property: rotation; to: 360 360 360; loop: true; easing: linear; dur: 60000"></a-plane>
+        </a-entity>
+            <a-entity rotation="0 180 0">
+            <a-plane src="../stripa.webp" transparent="true" position="0 2 -4" animation="property: rotation; to: -360 -360 0; loop: true; easing: linear; dur: 20000"></a-plane>
+        </a-entity>
+            <a-entity rotation="0 225 0">
+            <a-plane src="../check.webp" transparent="true" material="side: double" position="0 2 -4" animation="property: rotation; to: -360 360 0; loop: true; easing: linear; dur: 80000"></a-plane>
+        </a-entity>
+            <a-entity rotation="0 270 0">
+            <a-plane src="../linija.webp" transparent="true" material="side: double" position="0 2 -4" animation="property: rotation; to: -360 360 360; loop: true; easing: linear; dur: 40000"></a-plane>
+        </a-entity>
+            <a-entity rotation="0 315 0">
+            <a-plane src="../red.webp" transparent="true" material="side: double" position="0 2 -4" animation="property: rotation; to: -360 360 -360; loop: true; easing: linear; dur: 35000    "></a-plane>
+        </a-entity>
+    </a-entity>
+
+    
+
+
+      <a-sky src="att/red.webp" animation="property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 100000"></a-sky>
+
+
+    </a-scene>
+  </body>
+</html>

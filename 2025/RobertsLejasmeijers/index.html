@@ -1,0 +1,47 @@
+<html>
+
+  <head>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+  </head>
+
+  <body>
+
+    <a-scene>
+
+      <!-- grida -->
+      <a-plane position="0 0 0" rotation="-90 0 0" width="20" height="20" color="#888"></a-plane>
+
+      <!-- sienas -->
+      <a-plane position="0 2 -6" rotation="0 0 0" width="12" height="5" color="#EEE"></a-plane>
+      <a-plane position="-6 2 0" rotation="0 90 0" width="12" height="5" color="#EEE"></a-plane>
+      <a-plane position="6 2 0" rotation="0 -90 0" width="12" height="5" color="#EEE"></a-plane>
+      <a-plane position="0 2 6" rotation="0 180 0" width="12" height="5" color="#EEE"></a-plane>
+
+      <!-- gleznas -->
+      <a-plane src="bildes/490e8395-967a-436f-8dd1-7750ca6d2d56.webp" 
+               position="-3 2 -5" rotation="0 0 0" width="3" height="4"></a-plane>
+      
+      <a-plane src="bildes/089332e7-1ffb-45cb-87ec-47a8d91566fb-1.webp" 
+               position="0 2 -5" rotation="0 0 0" width="3" height="4"></a-plane>
+
+      <a-plane src="bildes/0780458b-e4ab-42dc-8cd8-561df82f2fdf.webp" 
+               position="3 2 -5" rotation="0 0 0" width="3" height="4"></a-plane>
+
+      <!-- gaismas prieks gleznam -->
+      
+      <!--  -->
+      <a-light type="ambient" color="#ffffff" intensity="0.3" position="0 5 0"></a-light>
+
+      <!-- gaisma prieks katras gaismas -->
+      <a-light type="point" color="#ffffe0" intensity="1" position="-3 4 -4"></a-light>
+      <a-light type="point" color="#ffffe0" intensity="1" position="0 4 -4"></a-light>
+      <a-light type="point" color="#ffffe0" intensity="1" position="3 4 -4"></a-light>
+
+      <!-- debesis -->
+      <a-sky color="#ECECEC"></a-sky>
+
+    </a-scene>
+
+  </body>
+
+</html>

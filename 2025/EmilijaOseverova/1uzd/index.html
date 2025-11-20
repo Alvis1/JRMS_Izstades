@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- Sky with background image -->
+      <a-sky src="3bluesky.webp"></a-sky>
+
+      <!-- Ground plane -->
+      <a-plane position="0 0 0" rotation="-90 0 0" width="12" height="10" src="zeme_sand.jpg"></a-plane>
+
+      <!-- Exhibition planes with images -->
+      <a-plane src="IMG_20250308_133555.webp" position="-2 1.5 -4" rotation="0 15 0" width="2" height="2"></a-plane>
+      <a-plane src="IMG_20250826_183656.jpg" position="0 1.5 -4" rotation="0 0 0" width="2" height="2"></a-plane>
+      <a-plane src="IMG_20250925_142754.jpg" position="2 1.5 -4" rotation="0 -15 0" width="2" height="2"></a-plane>
+
+      <!-- Camera -->
+      <a-entity camera look-controls wasd-controls position="0 1.6 0"></a-entity>
+    </a-scene>
+  </body>
+</html>
+	

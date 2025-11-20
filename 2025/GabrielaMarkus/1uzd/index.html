@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+
+      <!-- 
+        material="color: #6293c6" -- tas smukais zilais
+      -->
+
+
+
+
+      <!-- DARBI -->
+       <a-plane id="vidus" position="0.7326 2 -11.95564" src="atteli/lapsa2.webp" scale="3 3 3" material="shader: flat; side: double"></a-plane>
+
+       <a-plane id="pakreisi" position="-5.24414 2.42822 -8.91026" src="atteli/trauki2.webp" scale="3 2 2" rotation="0 33.55 0" material="shader: flat; side: double"></a-plane>
+
+       <a-plane id="palabi" position="6.43519 2.37672 -8.85217" src="atteli/pilites2.webp" scale="3 2 2" rotation="0 -33.55 0" material="shader: flat; side: double"></a-plane>
+       
+       <a-plane id="pakreisi-2" position="-2.65523 6.07439 -10.81569" src="atteli/skunis2.webp" scale="3 2 2" rotation="20 21.16 0" material="shader: flat; side: double"></a-plane>
+
+       <a-plane id="palabi-2" position="4.3735 6.07439 -10.81569" src="atteli/skunitis2.jpg" scale="3 2 2" rotation="20 -30.88 0" material="shader: flat; side: double"></a-plane>
+
+
+       <a-entity geometry="primitive: circle" rotation="-90 0 0" scale="5.74 3 1" position="0.1159 -0.23954 -2.67533" material="shader: standard; side: double"></a-entity>
+
+
+      <!-- GAISMA -->
+
+      <a-entity id="skunis" light="angle: 12; color: #e3932f; distance: 1000; intensity: 2000; penumbra: 0.53; type: spot" rotation="22 15 0"></a-entity>
+
+      <a-entity id="skunitis" light="angle: 12; color: #739fc8; distance: 1000; intensity: 2000; penumbra: 0.75; type: spot" rotation="22 -22 0"></a-entity>
+
+      <a-entity id="lapsa" light="angle: 20; color: #aa399e; distance: 1000; intensity: 2000; penumbra: 0.75; type: spot" rotation="0 -3.5 0"></a-entity>
+
+      <a-entity id="trauki" light="angle: 15; color: #c84d0b; distance: 1000; intensity: 2000; penumbra: 0.75; type: spot" rotation="3 30 0"></a-entity>
+
+      <a-entity id="pilites" light="angle: 15; color: #2c8364; distance: 1000; intensity: 2000; penumbra: 0.75; type: spot" rotation="2 -37 0"></a-entity>
+
+
+      <a-entity light="angle: 45; color: #9b9dee; distance: 1000; intensity: 0.5; penumbra: 0.53; type: ambient" rotation="4.39 0.8 0"></a-entity>
+
+
+      <!-- VIDE -->
+      
+      <a-sky src="atteli/pelkeotra22.webp" rotation="0 -40 0" material="shader: standard"></a-sky>
+
+
+
+    </a-scene>
+  </body>
+</html>

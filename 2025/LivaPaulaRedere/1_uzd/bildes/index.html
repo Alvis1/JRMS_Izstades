@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+
+    <!----pamati---->
+
+    <a-sky material="color: #ec82b0; side: back; shader: flat; npot: true"></a-sky>
+     <a-plane position="0.014 0.007 -1.36999" rotation="-90 0 -179.9" geometry="height: 10; width: 10" color="pink"></a-plane>
+     <a-box position="0 2.34636 -1.38367" color="00000" scale="10 5 10" material="opacity: 0.39; side: back">  </a-box>
+
+     <!----dekoracijas---->
+
+     <a-box src="rozadumi.webp" position="-0.01149 0.28765 -3.1975" rotation="0 45 0" color="#4CC3D9" geometry="height: 0.5"></a-box>
+     <a-cylinder src="roza.webp" position="1.66441 0.75 -4.31314" radius="0.5" height="1.5" color="#82FFFF"></a-cylinder>
+      <a-cylinder src="roza.webp" position="-1.66441 0.75 -4.31314" radius="0.5" height="1.5" color="#82FFFF"></a-cylinder>
+      <a-sphere src="audums.webp" position="0.01507 1.25 -5" radius="1.25" color="#FFBADD"></a-sphere>
+
+     <a-plane src="lapaas.png" transparent="true" position="1.84573 1.40741 2.96656" geometry="height: 3; width: 3" material="side: back" scale="1 0.8 1" rotation="4.575640951914754 16.402635759005207 -58.019998166127685"></a-plane>
+
+     <a-plane src="lapaas.png" transparent="true" position="-1.81611 1.40741 2.96656" geometry="height: 3; width: 3" material="side: back" scale="1 0.8 1" rotation="0.7265104842258838 -15.934529240383327 56.71709214000019"></a-plane>
+
+     <a-plane src="lapaas.png" transparent="true" position="0 1.05364 -4.21895" scale="3 2.4 2"></a-plane>
+
+     <a-plane src="lapaas.png" transparent="true" position="-1.83134 0.99469 -4.58876" scale="3 2.4 2" rotation="0 44.338338976198756 0"></a-plane>
+
+     <a-plane src="lapaas.png" transparent="true" position="1.74542 0.99469 -4.56751" scale="3 2.4 2" rotation="0 -44.338338976198756 0"></a-plane>
+
+      <!-----darbi------>
+
+      <a-plane src="2025-09-25 14_31_42.jpg" position="-2.26 1.216 -2.69" rotation="0 48 0" scale="0.644 0.574 1" color="00000"></a-plane>
+
+      <a-plane src="2025-09-25 14_31_39.jpg" position="2.26 1.216 -2.69" rotation="0 -48 0" color="00000"></a-plane>
+
+      <a-plane src="2025-09-25 14_31_45.jpg" position="0 1.2156 -3.70903" scale="1.411 1.040 1" color="00000" ></a-plane>
+
+      <a-plane src="2025-09-25 14_31_35.jpg" position="-0 1.783 2.4" rotation="0 179.7 0" scale="3 3 6" color="00000"></a-plane>
+
+    <!----------gaismas-->
+
+    <a-entity light="angle: 45; color: #8feeff; decay: -0.11; intensity: 1.21; penumbra: 1; type: spot; shadowBias: -0.19; shadowCameraFar: 500.62; shadowCameraFov: 89.97; shadowCameraRight: 5.15; shadowCameraBottom: -4.97; shadowMapHeight: 512.09" position="0 2.51166 0.37851" rotation="-13.009579696240474 0 -7.575075009424614" scale="1.42865 0.98733 1"></a-entity>
+
+    <a-entity light="angle: 45; color: #ffe76f; decay: -0.38; intensity: 2.46; penumbra: 0.1; type: spot" position="0 1.63874 -1.68776"></a-entity>
+
+    <a-entity light="angle: 45; color: #ffe76f; decay: -0.23; intensity: 2.31; penumbra: 1; type: spot" position="0.17075 1.63874 -0.60042" rotation="3.130641392594818 -38.689548074003966 -2.504398522516828"></a-entity>
+
+    <a-entity light="angle: 45; color: #ffe76f; decay: -0.23; intensity: 2.31; penumbra: 1; type: spot" position="-0.06618 1.63874 -0.60042" rotation="3.130641392594818 35.71360528609447 -2.504398522516828"></a-entity>
+
+    <a-entity light="angle: 45; color: #f078ff; decay: 0.45; intensity: 2.37; penumbra: 1; type: spot" position="0 4.92206 0" rotation="-60.51351049053702 179.9998479605043 -179.9998479605043"></a-entity>
+
+    <a-entity light="angle: 45; color: #ff000c; decay: -1.21; intensity: 4; penumbra: 1; type: spot" position="-0.57979 2.92029 1.5241" rotation="-15.869785009533542 179.9998479605043 -179.9998479605043" scale="0.5 0.5 0.5"></a-entity>
+    
+    </a-scene>
+  </body>
+</html>

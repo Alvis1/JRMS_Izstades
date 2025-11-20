@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      
+       <!--Izstade Objekti-->
+
+      <a-ring  position="-1 0.5 -3"rotation="0 45 0">
+      </a-ring >
+      <a-ring position="3.84825 0.5 -7.17921" rotation="0 -45 0">
+      </a-ring>
+      <a-ring position="7.30998 0.49 -3.61078" rotation="-37.72 -63.849999999999994 -6.35">
+      </a-ring>
+      <a-ring position="-4.36896 0.49 3.20735" rotation="360 159.23 -6.35">
+      </a-ring>
+
+ <a-sphere position="-5.43985 1.58454 -1.68666"  material="color: red"></a-sphere>
+         <a-sphere position="-4.51205 1.97242 -2.43661" ></a-sphere>
+         <a-sphere position="7.77975 1.97242 -2.43661"></a-sphere>
+         <a-sphere position="8.62452 1.58454 -1.68666"></a-sphere>
+         <a-sphere position="9.04616 2.53116 -1.81981" material="color: red"></a-sphere>
+  
+         <a-sphere position="9.16251 1.58454 7.62632"></a-sphere>
+         <a-sphere position="12.20612 2.53116 8.49223" scale="2.41 2.58 2.02" material="color: red" ></a-sphere>
+         <a-sphere position="10.95453 1.58454 5.85522" scale="1.24 1.32 1.28"></a-sphere>
+</a-sphere>
+
+<a-plane position="0 0 5.72753" rotation="-90 0 0" width="4" height="4" color="#000000" material="opacity: 0.32; repeat: 1.58 1; shader: flat; color: #0202bd"
+ scale="0.62 0.94 1"></a-plane>
+<a-plane position="0 0 9.98871" rotation="-90 0 0" width="4" height="4" color="#000000"
+ material="opacity: 0.32; repeat: 1.58 1; shader: flat; color: #1c0695" scale="0.34 0.74 1"></a-plane>
+ <a-box id="parson" position="9.29887 -0.49027 8.83741" scale="3.08 4.17 2.7" src="atteli/person.png" rotation="0.6985018371408168 139.97192130064275 0" animation="dur: 10000; loop: true; property: rotation; to: 0 360 0"> </a-box>
+ <a-box id="dark" position="-5.63078 0.03909 14.18691" scale="3.33 3.11 3.66" src="atteli/dark.png"
+  geometry="primitive: sphere" rotation="1.6 105.4 0" material="shader: flat" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"> </a-box>
+
+<!--Izstades Vide-->
+      <a-plane id="bilde-4" src="atteli/1000034160.png" position="5.9228 1.14 -5.11592" 
+      radius="1.25" color="4FB7B3" width="10" height="15" scale="0.49 0.24 1" rotation="0 -45.64000000000001 0" material="shader: flat"></a-plane>
+
+    <a-plane id="bilde" src="atteli/photo.webp" position="-0.06188 1.14 -8.33522" 
+    radius="1.25" color="4FB7B3" width="10" height="15" scale="0.9 0.54 1"></a-plane>
+
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#000000" material="opacity: 0.73; emissive: #000080"></a-plane>
+
+      <a-plane id="bilde-5" src="atteli/1000043189.jpg" position="-5.92272 1.14 1.81724" 
+      radius="1.25" color="4FB7B3" width="10" height="15" scale="0.49 0.36 1" rotation="0 103.71 0"></a-plane>
+
+<a-plane id="bilde-6" src="atteli/for.png" position="5.9228 1.14 11.57512" radius="1.25" color="4FB7B3" width="10" height="15"
+ scale="0.63 0.34 1" rotation="0 188.87 0"></a-plane>
+
+       <a-plane position="0 0 0.83477" rotation="-90 0 0" width="4" height="4" color="#000000" material="opacity: 0.32; repeat: 1.58 1; shader: flat; color: #0080c0"></a-plane>
+       <a-plane position="-4.89138 0 -1.51403" rotation="-90 0 0" width="4" height="4" color="#000000" material="opacity: 0.6; emissive: #014729"></a-plane>
+       <a-plane position="4.68672 0 -1.50684" rotation="-90 0 0" width="4" height="4" color="#000000" material="opacity: 0.31; emissive: #0000ff"></a-plane>
+
+<a-sky  id="coulds" src="atteli/clouds.webp" material="shader: standard" color="#5682B1"></a-sky>
+
+       <!-- gaismas -->
+        <a-entity light="angle: 45; color: #0dce68; decay: 0.31; distance: 50; intensity: 6.09; penumbra: 0.7; type: spot" position="-3.40088 1.08795 1.60553" rotation="-15.564120000000003 -18.2132 32.10037"></a-entity>
+        
+<a-entity light="angle: 45; color: #e1e6ff; intensity: 0.14; penumbra: 0.7; type: ambient" position="0 1.08795 -0.98262"
+ rotation="-15.994116851076932 24.38680263415323 31.29037110768452"></a-entity>
+<a-entity light="angle: 100; color: #345bf8; intensity: 984.96; penumbra: 0.7; type: spot" position="0.515 12.92659 2.07122"
+ rotation="75.04658496403036 54.40807222562297 109.65495466331747"></a-entity>
+<a-entity light="color: #f077ea; intensity: 7.65; type: spot" position="-2.17602 0.8043 3.73845" rotation="1.47 25 0"></a-entity>
+<a-entity light="angle: 45; color: #98aaaf; decay: 0.22; distance: 204.37; intensity: 6.39; penumbra: 1; type: spot" 
+position="7.55069 2.67315 0.94341" rotation="-31.860000000000003 180.36 1.6"></a-entity>
+
+
+<a-entity light="angle: 45; color: #0dce68; decay: 0.31; distance: 19.77; intensity: 6.09; penumbra: 0.7; type: spot"
+ position="4.88242 1.08795 -6.70234" rotation="-13.91412 200 32.10037"></a-entity>
+ <a-entity light="color: #f077ea; intensity: 7.65; type: spot" position="8.90054 5.10625 3.73845" rotation="1.47 25 0"></a-entity>
+ <a-entity light="angle: 45; color: #0dce68; decay: 0.02; distance: 200; intensity: 6.09; penumbra: 0.7; type: spot"
+  position="3.84893 -52.44304 -36.90061" rotation="90 -5.13 90"></a-entity>
+</html>
