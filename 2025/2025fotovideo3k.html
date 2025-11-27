@@ -38,7 +38,7 @@
             z-index: 1000;
             padding: 15px;
             text-align: center;
-            display: none; /* Hidden by default, shown when gallery is loaded */
+            display: none;
         }
 
         .author-display.visible {
@@ -52,51 +52,58 @@
             margin: 0;
         }
 
-        h1 {
-            color: black;
-            font-size: 2.5em;
-            margin-bottom: 1.5em;
+        .main-title {
+            font-size: 3.5em;
+            font-weight: bold;
+            color: #bbb;
+            margin-bottom: 0.5em;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 0.5em;
             font-weight: 300;
         }
-        
-        .school-title {
-            font-size: 3.2em;
-            font-weight: bold;
-            color: black;
-            margin-bottom: 0.5em;
+
+        .assignment-subtitle {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 2em;
+            font-weight: 300;
         }
-        
-        .assignment-title {
-            font-size: 2.8em;
-            color: black;
-            margin-bottom: 1.5em;
-            font-weight: 400;
+
+        .assignment-subtitle strong {
+            font-weight: bold;
         }
 
         .gallery-grid {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(3, auto);
             gap: 10px;
-            justify-content: center;
-            margin-bottom: 100px; /* Space for overlay buttons */
+            justify-content: start;
+            margin-bottom: 100px;
+            max-width: 100%;
         }
 
         .gallery-button {
             background: white;
             border: 2px solid black;
-            border-radius: 0;
             padding: 12px 16px;
             color: black;
             text-decoration: none;
             font-size: 0.9em;
             font-weight: 400;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
             display: inline-block;
+            text-align: center;
         }
 
         .gallery-button:hover {
-            background: #f0f0f0;
+            background: #f5f5f5;
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         /* Navigation bar at the bottom */
@@ -109,7 +116,7 @@
             border-top: 2px solid black;
             z-index: 1000;
             padding: 10px;
-            display: none; /* Hidden by default, shown when gallery is loaded */
+            display: none;
         }
 
         .bottom-nav.visible {
@@ -128,19 +135,20 @@
         .nav-button {
             background: white;
             border: 2px solid black;
-            border-radius: 0;
             padding: 6px 10px;
             color: black;
             text-decoration: none;
             font-size: 0.7em;
             font-weight: 400;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
             cursor: pointer;
             white-space: nowrap;
         }
 
         .nav-button:hover {
-            background: #f0f0f0;
+            background: #f5f5f5;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .nav-button.active {
@@ -172,13 +180,11 @@
             padding: 15px;
             background: rgba(255, 255, 255, 0.9);
             border: 2px solid black;
-            border-radius: 0;
         }
 
         .overlay-button {
             background: white;
             border: 2px solid black;
-            border-radius: 0;
             padding: 10px 20px;
             color: black;
             text-decoration: none;
@@ -188,8 +194,9 @@
         }
 
         .overlay-button:hover {
-            background: #f0f0f0;
-            transform: scale(1.05);
+            background: #f5f5f5;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .overlay-button.home {
@@ -207,20 +214,22 @@
             border-color: black;
         }
 
-            @media (max-width: 768px) {
-            .school-title {
+        @media (max-width: 768px) {
+            .main-title {
                 font-size: 2.2em;
             }
             
-            .assignment-title {
-                font-size: 1.8em;
+            .subtitle {
+                font-size: 1.2em;
             }
-            
-            h1 {
-                font-size: 2em;
-                margin-bottom: 1em;
-            }            .gallery-grid {
+
+            .assignment-subtitle {
+                font-size: 1.2em;
+            }
+
+            .gallery-grid {
                 gap: 8px;
+                grid-template-columns: repeat(2, auto);
             }
 
             .gallery-button {
@@ -251,8 +260,10 @@
 </head>
 <body>
     <div class="container" id="mainContainer">
-        <div class="school-title">Jaņa Rozentāla Mākslas Skolas 3. kurss </div>
-        <div class="assignment-title">Uzdevums: virtuālā personālizstāde 2025</div>
+        <h1 class="main-title">Jaņa Rozentāla<br>Mākslas Skola</h1>
+        <p class="subtitle">3. kurss - foto video tehnoloģiju pamati</p>
+        <p class="assignment-subtitle">Uzdevums: <strong>virtuālā personālizstāde</strong></p>
+        <img src="kontroles-01a.svg" alt="Kontroles" style="max-width: 33%; height: auto; margin-bottom: 2em;">
         <div class="gallery-grid" id="galleryGrid">
             <a href="#" onclick="loadGallery('AgateVojevodska/')" class="gallery-button">Agate Vojevodska</a>
             <a href="#" onclick="loadGallery('AleksaNaumenko/')" class="gallery-button">Aleksa Naumenko</a>
@@ -303,16 +314,16 @@
 
     <!-- Overlay controls for main page -->
     <div class="overlay-controls" id="mainOverlay">
-        <a href="#" class="overlay-button home" onclick="showMainGallery()">🏠 Sākums</a>
-        <a href="#" class="overlay-button random" onclick="openRandomGallery()">🎲 Nejaušs</a>
-        <a href="#" class="overlay-button about">ℹ️ Par</a>
+        <a href="#" class="overlay-button home" onclick="showMainGallery()">Sākums</a>
+        <a href="#" class="overlay-button random" onclick="openRandomGallery()">Nejaušs</a>
+        <a href="#" class="overlay-button about">Par</a>
     </div>
 
     <!-- Bottom navigation bar (shown when gallery is loaded) -->
     <div class="bottom-nav" id="bottomNav">
         <div class="nav-buttons">
-            <a href="#" class="nav-button home" onclick="showMainGallery()">🏠 Sākums</a>
-            <a href="#" class="nav-button random" onclick="openRandomGallery()">🎲 Nejaušs</a>
+            <a href="#" class="nav-button home" onclick="showMainGallery()">Sākums</a>
+            <a href="#" class="nav-button random" onclick="openRandomGallery()">Nejaušs</a>
             <a href="#" onclick="loadGallery('AgateVojevodska/')" class="nav-button">Agate Vojevodska</a>
             <a href="#" onclick="loadGallery('AleksaNaumenko/')" class="nav-button">Aleksa Naumenko</a>
             <a href="#" onclick="loadGallery('AleksBergersBrandaus/')" class="nav-button">Aleks Bergers-Brandaus</a>
@@ -494,6 +505,11 @@
 
         // Add keyboard navigation
         document.addEventListener('keydown', function(e) {
+            // Disable up/down arrow key scrolling
+            if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+                e.preventDefault();
+            }
+            
             if (e.key === 'r' || e.key === 'R') {
                 openRandomGallery();
             }
