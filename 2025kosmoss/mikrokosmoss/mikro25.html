@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mikrokosmoss - 3D Galerija</title>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.5.0/dist/aframe-extras.min.js"></script>
+    <style>
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid black;
+            padding: 10px 18px;
+            text-decoration: none;
+            color: black;
+            font-family: Arial, sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: background 0.2s ease;
+        }
+        .back-button:hover {
+            background: rgba(240, 240, 240, 1);
+        }
+        .instructions {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid black;
+            padding: 8px 16px;
+            color: black;
+            font-family: Arial, sans-serif;
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html" class="back-button">← Atpakaļ</a>
+    <div class="instructions">Pārvietošanās: W A S D taustiņi | Skatīšanās: peles kreisā poga + kustība</div>
+    
+    <a-scene>
+      
+       <a-entity camera="" look-controls="" wasd-controls="acceleration: 20" position="0 2 0"></a-entity>
+        <!-- Sky background -->
+        <a-sky color="white"></a-sky>
+        
+        <!-- Floor -->
+        <a-plane rotation="-90 0 0" width="100" height="100" color="white" position="0 0 0"></a-plane>
+        
+        <!-- GLB Models - randomly positioned -->
+         <a-entity id="komp" position="11 0 -20" rotation="0 47 0">
+        <a-entity 
+            gltf-model="8d_uzd_ELepesa.glb" 
+            animation-mixer
+            position="-12 0 -18" 
+            rotation="0 45 0"
+            scale="1 1 1">
+        </a-entity>
+        
+        <a-entity 
+            gltf-model="DarjaAndrejevska_1uzd_07.glb" 
+            animation-mixer
+            position="15 0 -8" 
+            rotation="0 -30 0"
+            scale="1 1 1">
+        </a-entity>
+        
+        <a-entity 
+            gltf-model="Emilija_Oseverova_uzd1_03blend.glb" 
+            animation-mixer
+            position="-5 0 -28" 
+            rotation="0 180 0"
+            scale="1 1 1">
+        </a-entity>
+        
+        <a-entity 
+            gltf-model="Emilija_Zalpetere-1uzd_anim_01.glb" 
+            animation-mixer
+            position="10 0 -35" 
+            rotation="0 -120 0"
+            scale="1 1 1">
+        </a-entity>
+        
+        <a-entity 
+            gltf-model="GabrielaMarkus_1uzd_05animacijadeja.glb" 
+            animation-mixer
+            position="-20 0 -10" 
+            rotation="0 90 0"
+            scale="1 1 1">
+        </a-entity>
+        
+        <a-entity 
+            gltf-model="MaraLepiksone_1uzd_07 l.glb" 
+            animation-mixer
+            position="3 0 -15" 
+            rotation="0 15 0"
+            scale="1 1 1">
+        </a-entity>
+        
+        <a-entity 
+            gltf-model="SamantaEverte_1uzd_04.glb" 
+            animation-mixer
+            position="-10 0 5" 
+            rotation="0 -60 0"
+            scale="1 1 1">
+        </a-entity>
+        
+        <a-entity 
+            gltf-model="evelinarusina-3d-pirmais-05.glb" 
+            animation-mixer
+            position="20 0 -24" 
+            rotation="0 150 0"
+            scale="1 1 1">
+        </a-entity>
+        
+        <a-entity 
+            gltf-model="linaleicane_1uzd_06_uv.glb" 
+            animation-mixer
+            position="-3 0 -42" 
+            rotation="0 -45 0"
+            scale="1 1 1">
+        </a-entity>
+        
+        <a-entity 
+            gltf-model="liva_redere_1uzd_01.glb" 
+            animation-mixer
+            position="14 0 6" 
+            rotation="0 210 0"
+            scale="1 1 1">
+        </a-entity>
+        
+        <a-entity 
+            gltf-model="marijagerascenko_1uzd_ finals.glb" 
+            animation-mixer
+            position="-16 0 -32" 
+            rotation="0 75 0"
+            scale="1 1 1">
+        </a-entity>
+        </a-entity>
+
+    </a-scene>
+</body>
+</html>
