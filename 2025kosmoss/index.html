@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2025 Kosmoss - Jānis Paraudziņš</title>
+    <title>2025 Kosmoss - Studentu darbi</title>
     <style>
         :root {
             --bg-color: #ffffff;
@@ -24,17 +24,25 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             font-family: 'Arial', sans-serif;
-            padding: 40px 5vw;
+            padding: 100px 5vw 40px;
+            overflow-y: auto;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--bg-color);
+            padding: 20px 5vw;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            overflow: hidden;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
         }
 
         .back-link {
-            position: absolute;
-            top: 30px;
-            left: 5vw;
             text-decoration: none;
             color: var(--text-color);
             font-size: 0.95rem;
@@ -54,31 +62,48 @@
 
         .gallery {
             display: flex;
+            flex-direction: column;
+            gap: 60px;
             width: 100%;
-            justify-content: center;
+            align-items: center;
         }
 
         .gallery-item {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             border: 2px solid var(--accent-color);
             border-radius: 18px;
             overflow: hidden;
-            height: 80vh;
-            max-height: 80vh;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-            width: 80vw;
-            max-width: 1200px;
+        }
+
+        .author-name {
+            width: 100%;
+            background: var(--accent-color);
+            color: var(--bg-color);
+            padding: 12px 20px;
+            font-size: 1.1rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .panes-container {
+            display: flex;
+            flex-direction: row;
+            height: min(80vw, 700px);
         }
 
         .pane {
             position: relative;
             background-color: #fff;
-            overflow: auto;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
+            height: 100%;
+            width: calc(min(80vw, 700px) * 9 / 16);
         }
 
         .pane + .pane {
@@ -89,19 +114,16 @@
             width: 100%;
             height: 100%;
             border: none;
-            flex: 1 1 auto;
             background-color: #fff;
         }
 
         video.gallery-video {
             width: 100%;
             height: 100%;
-            min-height: 100%;
             object-fit: contain;
             opacity: 0.85;
             transition: opacity 0.25s ease;
             cursor: pointer;
-            flex: 1 1 auto;
             background: #000;
         }
 
@@ -109,17 +131,10 @@
             opacity: 1;
         }
 
-        @media (max-width: 900px) {
-            body {
-                padding: 20px;
-                display: block;
-                overflow: auto;
-            }
-
-            .gallery-item {
-                grid-template-columns: 1fr;
+        @media (max-width: 1200px) {
+            .panes-container {
+                flex-direction: column;
                 height: auto;
-                width: 100%;
             }
 
             .pane + .pane {
@@ -127,8 +142,20 @@
                 border-top: 2px solid var(--accent-color);
             }
 
-            video.gallery-video {
-                min-height: 300px;
+            .pane {
+                height: min(80vw, 500px);
+                width: calc(min(80vw, 500px) * 9 / 16);
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 90px 10px 20px;
+            }
+
+            .pane {
+                height: min(70vw, 350px);
+                width: 90vw;
             }
         }
     </style>
@@ -136,17 +163,107 @@
 
 <body>
 
-    <a class="back-link" href="../index.html">← Atpakaļ</a>
-    <a class="back-link" href="mikrokosmoss/mikro25.html" style="left: auto; right: 5vw;">Mikrokosmoss</a>
+    <div class="header">
+        <a class="back-link" href="../index.html">← Atpakaļ</a>
+        <a class="back-link" href="mikrokosmoss/mikro25.html">Mikrokosmoss</a>
+    </div>
 
     <div class="gallery">
+        <!-- Agate Vojevodska -->
         <div class="gallery-item">
-            <div class="pane">
-                <iframe src="Janis_Paraudzins_dizains.pdf" class="pdf-viewer" title="Dizaina PDF"></iframe>
+            <div class="author-name">Agate Vojevodska</div>
+            <div class="panes-container">
+                <div class="pane">
+                    <iframe src="Agate_Vojevodska_dizains.pdf" class="pdf-viewer" title="Agate Vojevodska - Dizains"></iframe>
+                </div>
+                <div class="pane">
+                    <video class="gallery-video" src="Agate_Vojevodska_tels.mp4" muted playsinline loop></video>
+                </div>
             </div>
-            <div class="pane">
-                <video class="gallery-video" src="Janis_Paraudzins_tels.mp4" muted playsinline loop>
-                </video>
+        </div>
+
+        <!-- Anna Ābele -->
+        <div class="gallery-item">
+            <div class="author-name">Anna Ābele</div>
+            <div class="panes-container">
+                <div class="pane">
+                    <video class="gallery-video" src="Anna_Ābele_tels.mkv" muted playsinline loop></video>
+                </div>
+            </div>
+        </div>
+
+        <!-- Emma Herta Dommere -->
+        <div class="gallery-item">
+            <div class="author-name">Emma Herta Dommere</div>
+            <div class="panes-container">
+                <div class="pane">
+                    <video class="gallery-video" src="Tomaliins_EmmaHertaDommere.mp4" muted playsinline loop></video>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grieta Terzena -->
+        <div class="gallery-item">
+            <div class="author-name">Grieta Terzena</div>
+            <div class="panes-container">
+                <div class="pane">
+                    <iframe src="grieta_terzena_dizains.pdf.pdf" class="pdf-viewer" title="Grieta Terzena - Dizains"></iframe>
+                </div>
+                <div class="pane">
+                    <video class="gallery-video" src="grieta_terzena_raica.mp4" muted playsinline loop></video>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kate Brikmane-Buklovska -->
+        <div class="gallery-item">
+            <div class="author-name">Kate Brikmane-Buklovska</div>
+            <div class="panes-container">
+                <div class="pane">
+                    <iframe src="KateBrikmane-Buklovska_TelaDizains_01.pdf" class="pdf-viewer" title="Kate Brikmane-Buklovska - Dizains"></iframe>
+                </div>
+                <div class="pane">
+                    <video class="gallery-video" src="KateBrikmane-Buklovska-3Ckurss.mp4" muted playsinline loop></video>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lote Snike -->
+        <div class="gallery-item">
+            <div class="author-name">Lote Snike</div>
+            <div class="panes-container">
+                <div class="pane">
+                    <iframe src="Lote_Snike_dizains.pdf" class="pdf-viewer" title="Lote Snike - Dizains"></iframe>
+                </div>
+                <div class="pane">
+                    <video class="gallery-video" src="Lote_Snike_tels.mp4" muted playsinline loop></video>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rūta Jirgensone -->
+        <div class="gallery-item">
+            <div class="author-name">Rūta Jirgensone</div>
+            <div class="panes-container">
+                <div class="pane">
+                    <iframe src="Rūta_Jigensone_dizains.pdf" class="pdf-viewer" title="Rūta Jirgensone - Dizains"></iframe>
+                </div>
+                <div class="pane">
+                    <video class="gallery-video" src="Rūta_Jirgensone_tels.mp4" muted playsinline loop></video>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sofija Vlasova -->
+        <div class="gallery-item">
+            <div class="author-name">Sofija Vlasova</div>
+            <div class="panes-container">
+                <div class="pane">
+                    <iframe src="SofijaVlasova_dizains.pdf" class="pdf-viewer" title="Sofija Vlasova - Dizains"></iframe>
+                </div>
+                <div class="pane">
+                    <video class="gallery-video" src="SofijaVlasova_tels.mp4" muted playsinline loop></video>
+                </div>
             </div>
         </div>
     </div>
