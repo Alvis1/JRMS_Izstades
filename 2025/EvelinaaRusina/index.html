@@ -4,10 +4,10 @@
   </head>
   <body>
     <a-scene>
-      <a-entity camera look-controls wasd-controls="acceleration: 10" position="0 1.6 0"></a-entity>
     <!--------sienas------->
       <a-plane position="-3.34417 2.2 -6.05175" rotation="0 35.9 0" width="4" height="4" src="sky3.jpg" geometry="height: 3.87; width: 7.02"></a-plane>
-      <a-plane position="3.6567 2.2 -6.45952" 0="" 35.9="" 0"="" width="4" height="4" src="sky2.JPG" geometry="height: 3.87; width: 7.02" rotation="0 -26.223705325342646 0"></a-plane>
+      <a-plane position="3.6567 2.2 -6.45952" 0="" 35.9="" 0="" width="4" height="4" src="sky2.JPG" geometry="height: 3.87; width: 7.02" rotation="0 -26.223705325342646 0"></a-plane>
+      <a-plane position="0.47479 3.56407 6.87832" width="6" height="6" material="transparent: true; color: #d2d7fa" src="cutecat-1.JPG" scale="0.55 0.39138 1" rotation="0 180 0"></a-plane>
 
       <!------darbi------>
       <a-plane position="0 2 -5.08405" width="3" height="3" material="color: #d2d7fa" src="erdrawing5.jpg" scale="0.55 0.55 1"></a-plane>
@@ -16,12 +16,36 @@
       <a-plane position="4.63586 2 -3.29832" width="3" height="3" material="color: #d2d7fa" src="erdrawing4.jpg" scale="0.55 0.55 1" rotation="0 -33.82685526672867 0"></a-plane>
       <a-plane position="-4.52419 2 -3.29832" width="3" height="3" material="color: #d2d7fa" src="erdrawing3.jpg" scale="0.55 0.55 1" rotation="0 33.71742032785868 0"></a-plane>
 
+      <a-plane position="-1.0375 2 4.98158" width="3" height="3" material="color: #d2d7fa" src="erdrawing6.jpg" scale="0.55 0.55 1" rotation="0 169.08901266782803 0"></a-plane>
+      <a-plane position="1.92777 2 4.94938" width="3" height="3" material="color: #d2d7fa" src="erdrawing7.jpg" scale="0.55 0.55 1" rotation="0 -165.34587939223834 0"></a-plane>
+
+
+      <!---------overlay----->
+      <a-plane position="-5.1478 1.05901 -2.71783" width="3" heigt="3" transparent="true" src="cloud-1.png" scale="1.31294 1.57058 1" rotation="0 28.13681140328447 0"></a-plane>
+      <a-plane position="1.42089 3.19665 -4.69852" width="3" heigt="3" transparent="true" src="cloud-1.png" scale="1.03657 1.57058 1" rotation="0 -10.834058948128737 0"></a-plane>
+      <a-plane position="5.34278 2.87894 -2.67417" width="3" heigt="3" transparent="true" src="cloud-1.png" scale="0.73457 1.3151 1" rotation="0 -30.002934942025554 0"></a-plane>
+
+      <a-plane position="-3.57184 1.48434 -3.34844" width="3" heigt="3" transparent="true" src="cloud-2.png" scale="0.79621 1.57058 1" rotation="0 22.382596266785608 0"></a-plane>
+      <a-plane position="3.89737 1.21585 -3.58583" width="3" heigt="3" transparent="true" src="cloud-2.png" scale="1.15948 1.57058 1.52497" rotation="0 -23.142 0"></a-plane>
+
+      <a-plane position="1.58023 0.79808 4.47762" width="3" heigt="3" transparent="true" src="cloud-1.png" scale="1.35592 1.62912 1" rotation="0 -170.50765616857194 0"></a-plane>
+      <a-plane position="-0.80153 1.21585 4.42146" width="3" heigt="3" transparent="true" src="cloud-2.png" scale="0.8796 1.90797 1.52497" rotation="0 168.26280752724938 0"></a-plane>
+      
+      
       <!---------grida--------->
-      <a-plane position="1.44608 0 -0.54442" rotation="-90 0 0" width="2" height="2" material="color: #c3bcff"></a-plane>
-      <a-plane position="-0.68318 0 -0.98255" rotation="-90 0 0" width="2" height="2" material="color: #cdceff" geometry="height: 1.45; width: 1.44"></a-plane>
-      <a-plane position="-0.72014 0 1.57201" rotation="-90 0 0" width="2" height="2" material="color: #a19bfb" geometry="height: 1.57; width: 1.58"></a-plane>
+      <a-plane position="1.44608 0 -0.54442" rotation="-90 0 0" width="2" height="2" src="star-2.png" transparent="true" ></a-plane>
+      <a-plane position="-3.79525 0 -2.234" rotation="-89.99963750135457 -77.92283309558708 0" width="2" height="2" src="star-2.png" transparent="true"></a-plane>
+      <a-plane position="-0.68318 0 -0.98255" rotation="-90.00021045914971 6.218883908349955 0" width="2" height="2" src="star-1.png" transparent="true" geometry="height: 1.45; width: 1.44" scale="1.51619 1.42996 0.6724"></a-plane>
+      <a-plane position="-0.25449 0 1.51076" rotation="-89.99963750135457 43.57172144631371 0" width="2" height="2" src="star-1.png" transparent="true" geometry="height: 1.57; width: 1.58" scale="0.95601 0.95874 1"></a-plane>
+
+      <a-plane position="3.86764 0 -2.92887" rotation="-89.99963750135457 -20.026593813207665 0" width="2" height="2" src="star-1.png" transparent="true" geometry="height: 1.45; width: 1.44" scale="1.06942 1.0086 0.47427"></a-plane>
+      <a-plane position="4.78258 0 -1.44807" rotation="-89.99963750135457 -20.026593813207665 0" width="2" height="2" src="star-1.png" transparent="true" geometry="height: 1.45; width: 1.44" scale="1.19799 0.81452 0.47427"></a-plane>
+      
+      <a-plane position="2.50864 -0.00002 0.94017" rotation="-89.99963750135457 -20.026593813207665 0" width="2" height="2" src="star-1.png" transparent="true" geometry="height: 1.45; width: 1.44" scale="0.86138 0.77049 0.47427"></a-plane>
+      <a-plane position="-0.25449 0 1.51076" rotation="-89.99963750135457 43.57172144631371 0" width="2" height="2" src="star-1.png" transparent="true" geometry="height: 1.57; width: 1.58" scale="0.95601 0.95874 1"></a-plane>
       <a-plane src="sky6.JPG" position="0.14457 0.09789 -4" rotation="-90 0 0" width="4" height="4" material="color: #dbd8ff" geometry="height: 4.07; width: 5.83"></a-plane>
       
+      <!--------sky---->
       <a-sky src="sky5.JPG" material="color: #d9ddff"></a-sky> 
     </a-scene>
   </body>
